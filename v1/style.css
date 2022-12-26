@@ -1,0 +1,64 @@
+@import url("animation.css");
+@font-face {
+	font-family: 'Quicksand'; 
+	src: url(Quicksand-SemiBold.ttf); 
+}
+/*** this is kinda background, i did the best i could ***/
+body {
+	background-image: url(background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+/*** header ***/
+.maintext {
+	font-family: 'Quicksand';
+	font-style: bold;
+	font-size: 50px;
+	text-align: center;
+	margin-top: 300px;
+	color: white;
+	animation: rainbow 1s infinite;
+	user-select: none;
+}
+/*** urls ***/
+.text {
+	font-family: 'Quicksand';
+	font-style: bold;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 50px;
+	word-spacing:5px;
+	text-shadow: 0px 0px 10px gray;	
+	color: white;
+}
+/*** urls animation ***/
+.text a {
+	text-decoration: none;
+	color: #c3c3c3;
+	cursor: pointer;
+	text-shadow: 0px 0px 10px red;
+}
+.text a:hover {
+    background: linear-gradient(270deg, #e80000, #c3c3c3);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hover 2s infinite;
+    cursor: pointer;
+}
+@keyframes hover {
+	0%{background-position:0% 51%}
+	50%{background-position:100% 50%}
+	100%{background-position:0% 51%}
+}
+/*** dropdown section ***/
+/*** actually pasted ***/
+.slide {
+	width:95%;
+	height:0px;
+	overflow: hidden;
+	transition: height .4s ease;
+	position: fixed;
+}
+#touch {position: fixed; opacity: 0; height: 0px;}    
+#touch:checked + .slide {height: 300px;} 
