@@ -18,6 +18,20 @@
           preloader.style.display = "none";
         });
         preloader.style.opacity = 0;
+	// someshit for gallery
+        const trigger = document.getElementById('trigger-gallery');
+        const gallery = document.getElementById('gallery');
+        const closeButton = document.getElementById('close-gallery');
+
+        trigger.addEventListener('click', function() {
+        gallery.style.visibility = 'visible';
+        gallery.style.opacity = 1;
+        });
+
+        closeButton.addEventListener('click', function() {
+        gallery.style.visibility = 'hidden';
+        gallery.style.opacity = 0;
+        });
       };
     </script>
 </head>
@@ -32,6 +46,7 @@
         <a href="https://t.me/kowalsky13" target="_blank"><i class="fa-brands fa-telegram" style="margin:3px;"></i>Telegram</a>
         <a href="https://steamcommunity.com/id/DeadIntelInside1337/" target="_blank"><i class="fa-brands fa-steam" style="margin:5px;"></i>Steam</a>
         <a href="https://github.com/Kowalskyy" target="_blank"><i class="fa-brands fa-github" style="margin:5px;"></i>Github</a>
+	<a id="trigger-gallery" class="urls"><i class="fa-solid fa-image" style="margin: 5px;"></i>Gallery</a>
     </div>
     <div class="dropdown">
         <a><i class="fa-solid fa-question" style="margin: 5px;"></i>Services</a>
