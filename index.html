@@ -42,4 +42,50 @@
             <a href="https://www.online-convert.com" target="_blank"><i class="fa-solid fa-image" style="margin:5px;"></i>Converter</a>
         </div>
       </div>
+	<div id="gallery">
+        <div id="gallery-content">
+          <div id="close-gallery"><i class="fa-solid fa-x" style="margin: 5px;"></i></div>
+        </div>
+    </div>
+    <script>
+    function getImgurImages() {
+        // i dunno what you can do with that shit, but please, don't use them anywhere, thanks
+        const clientId = '952e9008d96a984';
+        const accessToken = 'dd6a446af9d029044a17d27d1eeeee8740035a91';
+        const galleryContent = document.getElementById('gallery-content');
+
+        // make GET request to Imgur API
+        fetch(`https://api.imgur.com/3/account/me/images`, {
+            headers: {
+            'Authorization': `Client-ID ${clientId}`,
+            'Authorization': `Bearer ${accessToken}`,
+            }
+        })
+        .then(response => response.json())
+        .then(json => {
+        // parsing json and receive link
+        const imageUrls = json.data.map(image => image.link);
+
+        // create <a> with <img> as child
+        const aElements = imageUrls.map(url => {
+        const aElement = document.createElement("a");
+        aElement.href = url;
+        aElement.target = "_self";
+        const imgElement = document.createElement("img");
+        imgElement.src = url;
+        aElement.appendChild(imgElement);
+        return aElement;
+        });
+        // append previous code into gallery
+        const galleryContent = document.getElementById("gallery-content");
+        aElements.forEach(aElement => {
+        galleryContent.appendChild(aElement);
+        });
+        })
+        .catch(error => console.error(error));  
+    }
+        getImgurImages();
+        // call getImgurImages function every 30 minutes
+        setInterval(getImgurImages, 1800000);
+    </script>
 </body>
