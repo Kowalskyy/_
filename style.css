@@ -5,6 +5,7 @@
 }
 /* i put all .urls tags here, because it won't work somewhy with them */
 #close-gallery {
+  width: fit-content;
   font-family: 'Quicksand';
   font-size: 25px;
   margin-top: 5px;
@@ -63,10 +64,8 @@
 }
 /* Background */
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+    width: fit-content;
+    margin: auto;
     overflow: hidden;
 }
 video {
@@ -109,12 +108,12 @@ video {
 }
 /* Drowdown */
 .dropdown {
+  width: fit-content;
+  margin: auto;
   position: center;
-  display: inline-block;
   text-align: center;
   font-family: 'Quicksand';
   font-size: 25px;
-  margin-left: 45%;
   text-decoration: none;
   color:rgb(255, 255, 255);
   text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 5px;
@@ -148,7 +147,6 @@ video {
 @media screen and (max-width: 600px) {
     .dropdown {
       font-size: 30px;
-      margin-left: 25%;
     }
     .header {
       font-size: 65px;
@@ -171,4 +169,5 @@ video {
       height: 150px;
       margin: 15px;
     }
+}
 }
