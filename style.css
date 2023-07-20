@@ -106,7 +106,14 @@ video {
 .urls a:hover {
     color:rgb(175, 89, 255);
 }
+.urls a i {
+  transition: .5s;
+}
+.urls a:hover i {
+  transform: scale(1.5);
+}
 /* Drowdown */
+/* no icons transform cuz blehh :b */
 .dropdown {
   width: fit-content;
   margin: auto;
