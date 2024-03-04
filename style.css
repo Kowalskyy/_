@@ -176,5 +176,8 @@ video {
       height: 150px;
       margin: 15px;
     }
+    #gallery-content {
+      overflow: auto;
+    }
 }
 }
